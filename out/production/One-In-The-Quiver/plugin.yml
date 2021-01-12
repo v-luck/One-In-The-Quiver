@@ -1,0 +1,7 @@
+main: me.JustKC.Game.Main
+name: Game
+version: 1.0Shadfadksh
+author: JK
+
+commands:
+  listplayer:
