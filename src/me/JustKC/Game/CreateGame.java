@@ -26,15 +26,9 @@ public class CreateGame implements CommandExecutor {
             for (Player player : Bukkit.getOnlinePlayers()) {
                 commandPlayer.sendMessage(player.getDisplayName());
                 player.giveExp(69);
-                player.setHealth(1);
-                player.setHealthScale(0.20);
-                player.setFoodLevel(20);
-                player.setAllowFlight(true);
-                player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(1.0);
-                player.getAttribute(Attribute.GENERIC_ATTACK_SPEED).setBaseValue(20);
-
                 if (!(main.returnDeathMessage())) {
                     Bukkit.getPluginManager().registerEvents(new DeathListener(), main);
+                    Bukkit.getPluginManager().registerEvents(new ArrowDamage(), main);
                     main.setDeathMessage();
                 }
             }
